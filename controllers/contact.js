@@ -3,7 +3,7 @@ Blogger.ContactController = Ember.Controller.extend({
 		sendMessage: function(){
 			var message = prompt("What message?");
 			this.set('confirmationNumber', Math.round(Math.random() * 100000));
-			this.set('meesageSend', true);
+			this.set('messageSent', true);
 		},
 	},
 	messageSent: false,
