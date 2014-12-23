@@ -8,6 +8,11 @@
 				<li>{{#link-to 'email'}}Email{{/link-to}}</li>
 			</ul>
 		</div>
+			{{#if messageSent}}
+					<p>Thank you. Your message has been sent. Your confirmation number is {{confirmationNumber}}</p> 
+			{{else}}
+					<p> Or, <a href="#" {{action 'sendMessage'}}>Click here</a> to send a secret message.</p>
+			{{/if}}
 		<div class="col-md-6">
 			{{outlet}}
 		</div>
