@@ -5,6 +5,9 @@ Blogger.AboutController = Ember.Controller.extend({
 		},
 		showPicture: function() {
 			this.set('isPictureShowing', true);
+		},		
+		hidePicture: function() {
+			this.set('isPictureShowing', false);
 		}
 	},
 	isPictureShowing: false,
