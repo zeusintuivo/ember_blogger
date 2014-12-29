@@ -11,31 +11,57 @@
     <script src="libs/ember-1.9.0.js"></script>
     <script src="libs/ember-handlebars-loader-0.0.1.js"></script>
 
+    <!-- Main app -->
     <script src="app/blogger.js"></script>
+
+    <!-- Data -->
+    <script src="models/posts.js"></script>
+
+    <!-- Controllers -->
     <script src="controllers/about.js"></script>
     <script src="controllers/contact.js"></script>
-    <script src="models/posts.js"></script>
+
+    <!-- Routes -->
     <script src="routes/router.js"></script>
     <script src="routes/posts.js"></script>
+    <script src="routes/recent-comments.js"></script>
     
-
+	<!-- Views -->
     <script>
-    EmberHandlebarsLoader.loadTemplates(['posts', 'about', 'contact', 'phone', 'email']);
+    EmberHandlebarsLoader.loadTemplates(['posts', 'about', 'contact', 'phone', 'email', 'recent-comments']);
     </script>
+
+    <!-- ! -->
+    <!-- 
+
+	    The Browser requests a url 
+		The "router" code talks to the controller, 
+		The "controller" code talks to the model, 
+		The "model" code provides the response to the controller
+		The "controller" code talks back to the views, providing formatted data
+		The "views" code talks to the browser
+
+	-->
 
 </head>
 
 <body>
+	<!-- Application.hbs -->
+	<!-- 
+		application.hbs is not loading 
+		so I placed the code here 
+	--> 
     <script type="text/x-handlebars">
 
         <div class="container">
             <nav class='navbar navbar-default' role='navigation'>
                 <ul class='nav navbar-nav'>
                     <li>{{#link-to 'posts'}}Posts{{/link-to}}</li>
+                    <li>{{#link-to 'recent-comments'}}Comments{{/link-to}}</li>
                     <li>{{#link-to 'about'}}About{{/link-to}}</li>
                     <li>{{#link-to 'contact'}}Contact{{/link-to}}</li>
-                </ul>
-            </nav>
+                </ul></nav>
+
 
             {{outlet}}
 
